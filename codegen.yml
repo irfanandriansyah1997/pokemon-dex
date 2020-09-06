@@ -1,0 +1,6 @@
+schema: https://graphql-pokemon-chi.vercel.app/? # path grapql core service
+generates:
+  ./src/shared/generated/graphql/type.d.ts:
+    plugins:
+      - typescript
+      - typescript-operations

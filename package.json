@@ -26,7 +26,8 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-        "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'"
+        "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
+        "generate-graphql": "graphql-codegen"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -58,6 +59,9 @@
         ]
     },
     "devDependencies": {
+        "@graphql-codegen/cli": "^1.17.6",
+        "@graphql-codegen/typescript": "^1.17.6",
+        "@graphql-codegen/typescript-operations": "^1.17.6",
         "@types/enzyme": "^3.10.5",
         "@types/enzyme-adapter-react-16": "^1.0.6",
         "@types/graphql": "^14.5.0",
