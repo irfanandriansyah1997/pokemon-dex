@@ -1,4 +1,4 @@
-import { InMemoryCache } from '@apollo/react-hooks';
+import { InMemoryCache } from '@apollo/client';
 
 export const GRAPHQL_URI =
     'https://graphql-pokemon-chi.vercel.app/?';

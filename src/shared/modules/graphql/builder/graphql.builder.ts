@@ -2,7 +2,7 @@ import {
     ApolloCache,
     ApolloClient,
     NormalizedCacheObject as Cache
-} from '@apollo/react-hooks';
+} from '@apollo/client';
 
 import ValidatorHelper from '../../../helper/validator.helper';
 import GraphqlGeneratorHelper from '../helper/graphql-generator.helper';

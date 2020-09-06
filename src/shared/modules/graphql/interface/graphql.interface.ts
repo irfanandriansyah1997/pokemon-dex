@@ -1,7 +1,7 @@
 import {
     ApolloCache,
     NormalizedCacheObject
-} from '@apollo/react-hooks';
+} from '@apollo/client';
 
 /**
  * Graphql Builder Param Interface
