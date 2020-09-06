@@ -1,16 +1,16 @@
 import React, { FunctionComponent } from 'react';
 
 /**
- * Context Modules
+ * Pokemon List Page
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2020.08.22
  */
-const ContextModules: FunctionComponent = () => {
+const PokemonListPage: FunctionComponent = () => {
     return (
         <div className="heading">
-            Context Modules
+            Pokemon List Page
         </div>
     );
 };
 
-export default ContextModules;
+export default PokemonListPage;
