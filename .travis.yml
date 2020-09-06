@@ -9,7 +9,7 @@ cache:
 script:
   - yarn run lint
   - CI=true yarn run test --coverage 
-  - bash <(curl -s https://codecov.io/bash) -t df123187-aba8-44bf-a3e8-b3c90638f56a
+  - bash <(curl -s https://codecov.io/bash) -t 2a58f71f-c71d-4f64-b1da-6106a0dc7e87
 
 before_deploy:
   - yarn run build
