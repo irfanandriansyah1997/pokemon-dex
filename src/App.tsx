@@ -1,4 +1,4 @@
-import LifecycleRouter from './content/lifecycle/lifecycle.router';
+import PokemonRouter from './content/pokemon/pokemon.router';
 import RoutingAppAbstract from './shared/modules/routing/abstract/routing-app.abstract';
 
 /**
@@ -12,7 +12,7 @@ class App extends RoutingAppAbstract {
      */
     get modules(): Object[] {
         return [
-            LifecycleRouter
+            PokemonRouter
         ];
     }
 }

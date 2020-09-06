@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Switch, Route, HashRouter } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
 import React, { PureComponent, ReactNode } from 'react';
+import { Switch, Route, HashRouter } from 'react-router-dom';
+
+import GraphqlBuilder from '../../graphql/builder/graphql.builder';
 import { RoutingItemInterface } from '../interface/routing-item.interface';
 
 /**
@@ -17,29 +20,34 @@ abstract class RoutingAppAbstract extends PureComponent {
     public static generateRouting(
         modules: Object[]
     ): ReactNode {
-        return (
-            <Switch>
-                {modules.map((ModulesItem: any) => {
-                    const controllerPath: string = Reflect.getMetadata('modules', ModulesItem);
-                    const routes: RoutingItemInterface[] = Reflect.getMetadata(
-                        'submodules',
-                        ModulesItem
-                    ) || [];
-                    const Modules = new ModulesItem();
+        const client = GraphqlBuilder.singleton();
 
-                    return (
-                        <Route path={controllerPath} key={controllerPath}>
-                            {Modules.render()}         
-                            {RoutingAppAbstract.generateRoutingItem(
-                                Modules,
-                                routes,
-                                controllerPath
-                            )}
+        return (
+            <ApolloProvider client={client}>
+                <Switch>
+                    {modules.map((ModulesItem: any) => {
+                        const controllerPath: string = Reflect.getMetadata('modules', ModulesItem);
+                        const routes: RoutingItemInterface[] = Reflect
+                            .getMetadata(
+                                'submodules',
+                                ModulesItem
+                            ) || [];
+                        const Modules = new ModulesItem();
+
+                        return (
+                            <Route path={controllerPath} key={controllerPath}>
+                                {Modules.render()}         
+                                {RoutingAppAbstract.generateRoutingItem(
+                                    Modules,
+                                    routes,
+                                    controllerPath
+                                )}
                             
-                        </Route>
-                    );
-                })}
-            </Switch>
+                            </Route>
+                        );
+                    })}
+                </Switch>
+            </ApolloProvider>
         );
     }
 

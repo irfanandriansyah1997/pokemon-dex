@@ -7,9 +7,11 @@ import React, { FunctionComponent } from 'react';
  */
 const PokemonListPage: FunctionComponent = () => {
     return (
+        
         <div className="heading">
             Pokemon List Page
         </div>
+        
     );
 };
 
