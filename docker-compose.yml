@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+    apps:
+        build:
+            context: ./
+            dockerfile: ./etc/docker/Dockerfile
+        container_name: pokedex-frontend
+        volumes:
+            - .:/usr/src/pokedex/
+            - ./.eslintrc:/usr/src/pokedex/.eslintrc
+            - ./package.json:/usr/src/pokedex/package.json
+            - ./tsconfig.json:/usr/src/pokedex/tsconfig.json
+            - ./node_modules:/usr/src/pokedex/node_modules
+            - ./.eslintignore:/usr/src/pokedex/.eslintignore
+        command: yarn start
+        ports:
+            - 3000:3000
+        expose:
+            - 3000
+        networks:
+            - internal
+
+networks:
+    internal:
+        driver: bridge

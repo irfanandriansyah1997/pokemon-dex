@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Switch, Route, HashRouter } from 'react-router-dom';
 import React, { PureComponent, ReactNode } from 'react';
-import { RoutingItemInterface } from '../routing/interface/routing-item.interface';
+import { RoutingItemInterface } from '../interface/routing-item.interface';
 
 /**
  * Routing App
