@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Switch, Route, HashRouter } from 'react-router-dom';
+
 import React, { PureComponent, ReactNode } from 'react';
+import { Switch, Route, HashRouter } from 'react-router-dom';
+
 import { RoutingItemInterface } from '../interface/routing-item.interface';
 
 /**
@@ -21,10 +23,11 @@ abstract class RoutingAppAbstract extends PureComponent {
             <Switch>
                 {modules.map((ModulesItem: any) => {
                     const controllerPath: string = Reflect.getMetadata('modules', ModulesItem);
-                    const routes: RoutingItemInterface[] = Reflect.getMetadata(
-                        'submodules',
-                        ModulesItem
-                    ) || [];
+                    const routes: RoutingItemInterface[] = Reflect
+                        .getMetadata(
+                            'submodules',
+                            ModulesItem
+                        ) || [];
                     const Modules = new ModulesItem();
 
                     return (
@@ -59,11 +62,11 @@ abstract class RoutingAppAbstract extends PureComponent {
             <Switch>
                 {routes.map(({ methodName, ...res }) => {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const Component: ReactNode = (modules as any)[methodName]();
+                    const Component: any = (modules as any)[methodName]();
                     
                     return (
                         <Route exact path={`${modulesPath}${res.path}`} key={res.path}>
-                            {Component}
+                            <Component />
                         </Route>
                     );
                 })}

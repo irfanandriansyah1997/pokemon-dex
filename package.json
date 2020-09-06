@@ -4,6 +4,8 @@
     "private": true,
     "homepage": "https://irfanandriansyah1997.github.io/pokemon-dex/",
     "dependencies": {
+        "@apollo/client": "^3.1.4",
+        "@apollo/react-hooks": "^4.0.0",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
@@ -11,6 +13,7 @@
         "@types/node": "^12.0.0",
         "@types/react-dom": "^16.9.8",
         "@types/react-router-dom": "^5.1.5",
+        "graphql": "^15.3.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",
@@ -24,7 +27,8 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-        "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'"
+        "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
+        "generate-graphql": "graphql-codegen"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -56,8 +60,12 @@
         ]
     },
     "devDependencies": {
+        "@graphql-codegen/cli": "^1.17.6",
+        "@graphql-codegen/typescript": "^1.17.6",
+        "@graphql-codegen/typescript-operations": "^1.17.6",
         "@types/enzyme": "^3.10.5",
         "@types/enzyme-adapter-react-16": "^1.0.6",
+        "@types/graphql": "^14.5.0",
         "@types/react": "^16.9.46",
         "@types/reflect-metadata": "^0.1.0",
         "@typescript-eslint/eslint-plugin": "3.9.1",
