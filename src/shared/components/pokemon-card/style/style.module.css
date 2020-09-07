@@ -1,0 +1,87 @@
+.card {
+    border-radius: 10px;
+    display: block;
+    margin: 15px 5px;
+    padding: 10px 10px 20px;
+    transition: 0.31s cubic-bezier(0.7, 0.3, 0, 1);
+    text-decoration: none;
+    text-align: center;
+}
+
+.image {
+    width: calc(100% - 10px);
+    height: 100px;
+    margin: 5px 5px 20px;
+    object-fit: contain;
+}
+
+.id,
+.name,
+.types {
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    color: #8f9bb3;
+    margin: 0;
+}
+
+.types {
+    padding: 2px 10px;
+    border: 1px solid #e4e9f2;
+    margin: 10px 3px 0;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.id {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222b45;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.type-container {
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+@media (min-width: 320px) {
+    .card {
+        width: calc(calc(100% / 2) - 30px);
+    }
+}
+
+@media (min-width: 576px) {
+    .card {
+        width: calc(calc(100% / 2) - 30px);
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: calc(calc(100% / 3) - 30px);
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: calc(calc(100% / 4) - 30px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: calc(calc(100% / 4) - 30px);
+        background: #fff;
+    }
+
+    .card:hover {
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    }
+}
