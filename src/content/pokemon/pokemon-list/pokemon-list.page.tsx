@@ -4,6 +4,7 @@ import React, { FunctionComponent } from 'react';
 
 import style from './style/style.module.css';
 import PokemonCardComponent from '../../../shared/components/pokemon-card/pokemon-card.component';
+import HeaderComponent from '../../../shared/components/header/header.component';
 
 const GET_POKEMON = gql`
     query GetPokemons($first: Int!) {
@@ -37,11 +38,7 @@ const PokemonListPage: FunctionComponent = () => {
 
     return (
         <div className={style.container}>
-            <img
-                className={style.logo}
-                src="https://static.dribbble.com/users/674925/screenshots/2861441/pokemon.jpg"
-                alt="logo"
-            />
+            <HeaderComponent />
             <div className={style.row} style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {data && data.pokemons ? data.pokemons.map((item: any) => (
                     <PokemonCardComponent

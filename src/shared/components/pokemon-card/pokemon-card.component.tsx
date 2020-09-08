@@ -22,23 +22,24 @@ const PokemonCardComponent: FunctionComponent<PokemonCardInterface> = ({
     return (
         <a href={link} className={style.card}>
             <img className={style.image} src={images} alt={name} />
-            <h4 className={style.id}>#{number}</h4>
-            <h5 className={style.name}>{name}</h5>
-            <div className={style['type-container']}>
-                {types.map((item) => (
-                    <p
-                        className={style.types}
-                        style={{
-                            color: POKEMON_TYPES_COLOR[item],
-                            borderColor: POKEMON_TYPES_COLOR[item]
-                        }}
-                        key={`${number}-${item}`}
-                    >
-                        {item}
-                    </p>
-                ))}
+            <div className={style.container}>
+                <h4 className={style.id}>#{number}</h4>
+                <h5 className={style.name}>{name}</h5>
+                <div className={style['type-container']}>
+                    {types.map((item) => (
+                        <p
+                            className={style.types}
+                            style={{
+                                color: POKEMON_TYPES_COLOR[item],
+                                borderColor: POKEMON_TYPES_COLOR[item]
+                            }}
+                            key={`${number}-${item}`}
+                        >
+                            {item}
+                        </p>
+                    ))}
+                </div>
             </div>
-            
         </a>
     );
 };
