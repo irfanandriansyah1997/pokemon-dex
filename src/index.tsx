@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
 
 import App from './App';
+import './shared/style/style.css';
 import * as serviceWorker from './serviceWorker';
 import GraphqlBuilder from './shared/modules/graphql/builder/graphql.builder';
 

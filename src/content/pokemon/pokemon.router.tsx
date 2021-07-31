@@ -1,9 +1,10 @@
-import { ReactNode, FunctionComponent } from 'react';
+import React, { ReactNode, FunctionComponent } from 'react';
 
 import PokemonListPage from './pokemon-list/pokemon-list.page';
 import PokemonDetailPage from './pokemon-detail/pokemon-detail.page';
 import { RoutingModulesInterface } from '../../shared/modules/routing/interface/routing-modules.interface';
 import { RoutingModulesDecorator, RoutingSubModulesDecorator } from '../../shared/modules/routing/decorator/router.decorator';
+import LoadingScreenComponent from '../../shared/components/loading-screen/loading-screen.component';
 
 /**
  * Pokemon Router
@@ -13,7 +14,11 @@ import { RoutingModulesDecorator, RoutingSubModulesDecorator } from '../../share
 @RoutingModulesDecorator('')
 class PokemonRouter implements RoutingModulesInterface {
     render(): ReactNode {
-        return null;
+        return ((): ReactNode => (
+            <>
+                <LoadingScreenComponent show={true} />
+            </>
+        ))();
     }
 
     /**
